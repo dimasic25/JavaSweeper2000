@@ -1,13 +1,13 @@
 package sweeper;
 
 public class Ranges {
-    private Coord size;
+    private static Coord size;
 
-    public void setSize(Coord size) {
-        this.size = size;
+    public static void setSize(Coord _size) {
+        size = _size;
     }
 
-    public Coord getSize() {
+    public static Coord getSize() {
         return size;
     }
 }
