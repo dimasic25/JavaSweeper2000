@@ -13,7 +13,22 @@ class Flag {
         return flagMap.get(coord);
     }
 
-    public void setOpenedToBox(Coord coord) {
+    void setOpenedToBox(Coord coord) {
         flagMap.set(coord, Box.OPENED);
+    }
+
+    void toggleFlagedToBox(Coord coord) {
+        switch (flagMap.get(coord)) {
+            case FLAGED -> setClosedToBox(coord);
+            case CLOSED -> setFlagedToBox(coord);
+        }
+    }
+
+    void setClosedToBox(Coord coord) {
+        flagMap.set(coord, Box.CLOSED);
+    }
+
+    void setFlagedToBox(Coord coord) {
+        flagMap.set(coord, Box.FLAGED);
     }
 }
