@@ -51,14 +51,13 @@ public class Game {
                 return;
             case CLOSED:
                 switch (bomb.get(coord)) {
-                    case ZERO:
+                    case ZERO -> {
                         openBoxesAround(coord);
-                        return;
-                    case BOMB:
+                    }
+                    case BOMB -> {
                         openBombs(coord);
-                        return;
-                    default:
-                        flag.setOpenedToBox(coord);
+                    }
+                    default -> flag.setOpenedToBox(coord);
                 }
         }
     }
